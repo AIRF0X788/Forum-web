@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Page d'administration</title>
+    <link rel="stylesheet" href="/css/admin.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+            Ynet
+            <span>Admin page navigation</span>
+        </div>
+        <a href="/"><li>Accueil</li></a>
+        <a href="/logout"><li>Login</li></a>
+        <a href="/update"><li>Paramètres</li></a>
+    </div>
+
+    <h1>Page d'administration</h1>
+    <table class="styled-table">
+        <tr>
+            <th>ID</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Admin</th>
+            <th>Action</th>
+            <th>Action</th>
+            <th>Banni</th>
+        </tr>
+        {{range .}}
+        <tr>
+            <td>{{.ID}}</td>
+            <td>{{.Username}}</td>
+            <td>{{.Email}}</td>
+            <td>{{if .IsAdmin}}Oui{{else}}Non{{end}}</td>
+            <td><button class="button" onclick="banUser('{{.ID}}')">Ban</button></td>
+            <td><button class="button2" onclick="unbanUser('{{.ID}}')">Déban</button></td>
+            <td>{{if .IsBanned}}Oui{{else}}Non{{end}}</td>
+        </tr>
+        {{end}}
+    </table>
+
+    <script>
+        function banUser(userID) {
+            // Envoyer une requête POST au serveur pour bannir l'utilisateur avec l'ID spécifié
+            fetch("/ban", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ userID: userID })
+            })
+            .then(response => {
+                if (response.ok) {
+                    alert("Utilisateur banni avec succès !");
+                    location.reload();
+                } else {
+                    alert("Une erreur est survenue lors du bannissement de l'utilisateur.");
+                }
+                
+            })
+            .catch(error => {
+                alert("Une erreur est survenue lors du bannissement de l'utilisateur.");
+            });
+            
+        }
+    </script>
+    <script>
+        function unbanUser(userID) {
+            // Envoyer une requête POST au serveur pour bannir l'utilisateur avec l'ID spécifié
+            fetch("/unban", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ userID: userID })
+            })
+            .then(response => {
+                if (response.ok) {
+                    alert("Utilisateur débanni avec succès !");
+                    location.reload();
+                } else {
+                    alert("Une erreur est survenue lors du débannissement de l'utilisateur.");
+                }
+            })
+            .catch(error => {
+                alert("Une erreur est survenue lors du débannissement de l'utilisateur.");
+            });
+        }
+    </script>
+</body>
+</html>    

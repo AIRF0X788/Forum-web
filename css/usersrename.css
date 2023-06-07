@@ -1,0 +1,122 @@
+body {
+    font-family: Arial, sans-serif;
+    transition: 1s;
+    background-image: url(/image/wallpaper1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #333;
+    margin: 0;
+    transition: 1s;
+}
+
+.container {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input[type="text"] {
+    width: 95%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type="submit"],
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #dfb4d0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type="submit"],
+button:hover {
+    background-color: #da77b9;
+}
+
+input[type="submit"] {
+    background-color: #dfb4d0;
+}
+
+input[type="submit"]:hover {
+    background-color: #da77b9;
+}
+
+button.random-button {
+    background-color: #dfb4d0;
+}
+
+button.random-button:hover {
+    background-color: #da77b9;
+}
+
+/* Dark Theme */
+body.dark-theme {
+    background-image: url(/image/wallpaper.jpg);
+    color: #fff;
+    transition: 1s;
+}
+
+body.dark-theme .container {
+    background-color: #222;
+    border-color: #555;
+}
+
+body.dark-theme h1 {
+    color: #fff;
+}
+
+body.dark-theme label {
+    color: #ccc;
+}
+
+body.dark-theme input[type="text"],
+body.dark-theme input[type="submit"],
+body.dark-theme button {
+    background-color: #555;
+    border-color: #888;
+}
+
+body.dark-theme input[type="submit"]:hover,
+body.dark-theme button:hover {
+    background-color: #9b31d4;
+}
+
+.position-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.position-button2 {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.dark-theme .position-button2 {
+    filter: invert(100%);
+    -webkit-filter: invert(100%);
+}

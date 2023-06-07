@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YNet</title>
+	<link rel="stylesheet" href="/css/login.css">
+	<link rel="stylesheet" href="/css/Logo2.css">
+</head>
+
+<body>
+	<div class="logo">
+		<h1>Ynet</h1>
+	</div>
+	<div class="login-box">
+	<h2>Connexion</h2>
+	<form action="/login" method="POST">
+		<div class="user-box">
+			<label for="login">Nom d'utilisateur ou adresse e-mail:</label><br>
+			<input type="text" id="login" name="login" required><br>
+	</div>
+	<div class="user-box">
+		<label for="password">Mot de passe :</label><br>
+		<input type="password" id="password" name="password" required><br>
+	</div><a href="#">
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<input type="submit" value="Se connecter" class="my-button">
+	  </a>
+		
+	</form>
+	<div class="signup">
+    <p>Pas encore de compte ? <a href="/signup">S'inscrire</a></p>
+</div>
+</div>
+<script src="/js/scripts.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ynet</title>
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/profile.css">
+    <link rel="stylesheet" href="/css/cookies.css">
+    <link rel="stylesheet" href="/css/Ynet.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <audio id="key-sound" src="/audio/key.mp3"></audio>
+    <audio id="key-sound" src="/audio/enter.mp3"></audio>
+    <audio id="key-sound" src="/audio/backspace.mp3"></audio>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            <h1>Ynet</h1>
+        </div>
+        <div class="key" onclick="onKeyClick()"></div>
+        <div class="profile" style="left: 79%;">
+            <div class="photo">
+                <img src="data:image/jpeg;base64,{{.ProfilePicture}}" alt="Photo de profil">
+            </div>
+            <div class="content">
+                <div class="text">
+                    <h2>
+                        <div class="username">{{ .Username }}</div>
+                    </h2>
+                    <h5>
+                        <p>Membre depuis {{.CreatedAt.Format "02/01/2006"}}</p>
+                    </h5>
+                </div>
+                <div class="btn-return"><span></span></div>
+            </div>
+            <div class="box">
+                <i class="fa">
+                    <a href="/admin">
+                        <img src="/image/admin.png" class="admin" height="50px" width="50px">
+                    </a>
+                </i>
+                <i class="fa">
+                    <a href="/update">
+                        <img class="icologout" src="/image/engrenage.png" height="50px" width="50px">
+                    </a>
+                </i>
+                <i class="fa">
+                    <a href="/logout">
+                        <img class="icologout" src="/image/logoutico.png" height="50px" width="50px">
+                    </a>
+                </i>
+                <i class="fa">
+                    <button id="theme-switcher">
+                        <img src="/image/mode-sombre.png" class="admin" height="50px" width="50px">
+                    </button>
+                </i>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="new-topic">
+            <h2>Nouveau topic</h2>
+            <form action="/create_topic" method="POST" enctype="multipart/form-data">
+                <div>
+                    <label for="title">Titre:</label>
+                    <input type="text" id="title" name="title" required>
+                </div>
+                <div>
+                    <label for="content">Contenu:</label>
+                    <textarea id="content" name="content" required></textarea>
+                </div>
+                <div>
+                    <label for="category" class="categorytext">Catégories:</label>
+                    <select name="category" id="selected_category" class="categoryselect" required>
+                        <option value="">--Choisir une catégorie--</option>
+                        <option value="Sports">Sports</option>
+                        <option value="Musique">Musique</option>
+                        <option value="Cuisine">Cuisine</option>
+                        <option value="Cinéma">Cinéma</option>
+                        <option value="Jeux vidéo">Jeux vidéo</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="image">Image :</label>
+                    <input type="file" id="image" name="image" style="color:red;"><br>
+
+<style></style>
+
+                </div>
+                <input type="submit" id="creer" value="Créer">
+            </form>
+        </section>
+        <section class="existing-topics">
+            <div>
+                <label for="category-filter" class="categorytext">Filtrer les catégorie:</label>
+                <select id="category-filter" class="categoryselect">
+                    <option value="">Toutes les catégories</option>
+                    <option value="Sports">Sports</option>
+                    <option value="Musique">Musique</option>
+                    <option value="Cuisine">Cuisine</option>
+                    <option value="Cinéma">Cinéma</option>
+                    <option value="Jeux vidéo">Jeux vidéo</option>
+                </select>
+                <button class="recherche" onclick="filterTopics()">Rechercher</button>
+            </div>
+            <h2>Topics existants</h2>
+            <ul>
+                {{ range .Topics }}
+                <li class="topic-item">
+                    <div class="topic-wrapper">
+                        <a class="title">{{.Title}}</a>
+                        <a class="category">✔️ {{.Category}}</a>
+                        <p>Créer le {{.CreatedAt.Format "02/01/2006 à 15:04"}}</p>
+                        <a href="/topic/{{ .ID }}" style="text-decoration: none;">Découvrir ...</a>
+                        <form action="/delete_topic" method="POST" style="display: inline;" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer ce message ?');">
+                            <input type="hidden" name="topic_id" value="{{.ID}}">
+                            <button type="submit" class="delete-button">Supprimer</button>
+                        </form>
+                        
+                        
+                    </div>
+                </li>
+                {{ end }}
+            </ul>
+
+        </section>
+        
+
+    </main>
+    <div id="cookie-consent" class="cookie-consent">
+        <span>Ce site utilise des cookies. En continuant à naviguer sur ce site, vous acceptez leur utilisation.</span>
+        <div class="buttons">
+            <button id="cookie-accept" class="cookie-accept">Accepter</button>
+            <a href="/plus">En savoir plus</a>
+        </div>
+    </div>
+
+
+
+    <script src="/js/clique.js"></script>
+    <script src="/js/cookies.js"></script>
+    <script src="/js/scripts.js"></script>
+    <script src="/js/like.js"></script>
+    <script src="/js/filtre.js"></script>
+
+
+
+</body>
+
+</html>

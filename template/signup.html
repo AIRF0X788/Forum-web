@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>YNet</title>
+	<link rel="stylesheet" href="/css/signup.css">
+	<link rel="stylesheet" href="/css/Logo.css">
+</head>
+
+<body>
+	<div class="logo">
+		<h1>Ynet</h1>
+	</div>
+	<div class="login-box">
+		<h2>Inscription</h2>
+		<form action="/signup" method="POST" enctype="multipart/form-data">
+			<div class="user-box">
+				<label for="username">Nom d'utilisateur :</label><br>
+				<input type="text" id="username" name="username" required><br>
+			</div>
+			<div class="user-box">
+				<label for="email">Email :</label><br>
+				<input type="email" id="email" name="email" required
+					pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
+					oninvalid="this.setCustomValidity('Veuillez saisir une adresse email valide, incluant le caractère @')"
+					oninput="this.setCustomValidity('')" /><br>
+			</div>
+			<div class="user-box">
+				<label for="password">Mot de passe :</label><br>
+				<input type="password" id="password" name="password" required minlength="5"><br>
+			</div>
+			<div class="user-box">
+				<label for="confirm_password">Confirmer le mot de passe :</label><br>
+				<input type="password" id="confirm_password" name="confirm_password" required><br>
+			</div>
+			<input type="file" name="profile_picture">
+
+			<a href="#">
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+				<input type="submit" value="S'inscrire" class="my-button">
+			</a>
+
+		</form>
+		<div class="signup">
+			<p>Déjà un compte ? <a href="/login">Se connecter</a></p>
+		</div>
+	</div>
+</body>
+<script src="/js/scripts.js"></script>
+<script src="/js/mdp.js"></script>
+
+
+</html>

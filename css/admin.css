@@ -1,0 +1,123 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #f9f9f9;
+    color: #232323;
+    font-family: "Avenir Next", "Avenir", sans-serif;
+    background-image: url(/image/wallpaper1.jpg);
+    background-size: cover;
+}
+
+.styled-table {
+    border-collapse: collapse;
+    width: 50%;
+    margin-left: 25%;
+    margin-top: 20px;
+    border-radius: 15px;
+}
+
+.styled-table th {
+    background-color: #904ac9;
+    color: #ffffff;
+    padding: 12px;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.styled-table td {
+    border: 1px solid #e9ecef;
+    padding: 8px;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
+}
+
+
+.button {
+    background-color: #dfcdcd;
+    color: #cd0000;
+    border-radius: 10px;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    width: 100%;
+}
+
+.button:hover {
+    background-color: #eed7d7;
+    color: #a80000;
+    cursor: pointer;
+}
+
+.button2 {
+    background-color: #d5f3e5;
+    color: #49a051;
+    border-radius: 10px;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    width: 100%;
+}
+
+.button2:hover {
+    background-color: #e1f7ed;
+    color: #49a051;
+    cursor: pointer;
+}
+
+h1 {
+    color: #fff;
+    text-align: left;
+    text-align: center;
+    text-shadow: 15px;
+}
+
+
+.sidebar {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background: linear-gradient(to bottom right, #6506a5, #18307c, #9e5ddb );
+    overflow-x: hidden;
+    padding-top: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.sidebar a {
+    padding: 12px 16px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #ffffff;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+
+.sidebar a:hover {
+    background-color: #a8a1e9;
+}
+
+
+.sidebar .logo {
+    padding: 12px 16px;
+    text-align: center;
+    background-color: #7b47ce;
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+
+.sidebar .logo span {
+    display: block;
+    font-size: 14px;
+    font-weight: normal;
+    margin-top: 4px;
+}

@@ -1,0 +1,198 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  scroll-padding-top: 3rem;
+  scrollbar-width: thin;
+  font-family: sans-serif;
+}
+
+
+::-webkit-scrollbar {
+  width: 8px;
+  /* background: transparent; */
+  background: black;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(0deg, rgb(30, 188, 255, 0.76), rgba(195, 0, 255, 0.76));
+  border-radius: 10px;
+}
+
+header {
+  background-color: #00000053;
+  border-bottom: 1px solid #e6ecf000;
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 10;
+  z-index: 999;
+  font-family: sans-serif;
+}
+
+header nav ul {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  transition: 1s;
+  line-height: 1.5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-image: url(/image/wallpaper1.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+h3 {
+  margin-top: 0;
+}
+
+p {
+  margin-top: 8px;
+}
+
+.tweet {
+  max-width: 500px;
+  width: 100%;
+  padding: 16px;
+  background-color: #fff;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 8px 16px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #fff;
+  background-color: #dfb4d0;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: -30%;
+}
+
+.btn:hover {
+  background-color: #da77b9;
+}
+
+h3 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.created-at {
+  font-size: 14px;
+  color: #999;
+}
+
+.dark-theme {
+  transition: 1s;
+  font-family: sans-serif;
+  line-height: 1.5;
+  background-image: url(/image/wallpaper.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.dark-theme .btn:hover {
+  background-color: #9b31d4;
+}
+
+.dark-theme .btn {
+  background-color: #a464c6;
+}
+
+.dark-theme header {
+  background-color: #38073f74;
+}
+.dark-theme .profile .content::before {
+  background-color: #8d5ea3;
+  transition: 1s;
+}
+
+.dark-theme .tweet {
+  background-color: #ffffff93;
+}
+
+.icologout {
+  width: 70px;
+  height: 70px;
+  margin-top: -20%;
+  transform: rotate(-80deg);
+  margin-left: -20%;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+}
+
+.dark-theme .created-at {
+  font-size: 14px;
+  color: #000;
+}
+
+.existing-topics {
+  background-color: #ffffff93;
+  padding: 10px;
+  border-radius: 10px;
+  margin-left: 2%;
+}
+
+.existing-topics h2 {
+  font-weight: bold;
+}
+
+.existing-topics ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.existing-topics li {
+
+  align-items: center;
+}
+
+.existing-topics li a:first-child {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.existing-topics li a:nth-child(2) {
+  border: 1px solid #999999;
+  background-color: #dfb4d0;
+  border-radius: 1rem;
+  width: 108px;
+  padding: 2px 5px;
+  color: white;
+  margin-right: 10px;
+}
+
+.existing-topics li p {
+  margin: 0;
+}
+
+.existing-topics li a:last-child {
+  margin-left: auto;
+}

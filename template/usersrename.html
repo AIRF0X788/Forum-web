@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YNet</title>
+	<link rel="stylesheet" href="/css/usersrename.css">
+</head>
+<body>
+    <a href="/"><img class="position-button2" src="/image/back.png" style="width: 4%; cursor: pointer;"></a>
+    <div class="container">
+        <h1>Modifier le nom d'utilisateur</h1>
+        <form action="/update" method="POST">
+            <label for="username" style="text-decoration: underline;">Nouveau nom d'utilisateur:</label>
+            <input type="text" id="username" name="username" required>
+            <input type="submit" value="Modifier">
+        </form>
+        <form action="/generate-username" method="post">
+            <button class="random-button" type="submit">Générer un pseudo mystère ...</button>
+        </form>
+        
+    </div>
+    <div class="container">
+        <h1>Modifier la photo de profile</h1>
+        <label for="photo" style="text-decoration: underline;">Nouvelle photo de profile:</label>
+    <form action="/change-profile-picture" method="post" enctype="multipart/form-data">
+        <input type="file" name="profilePicture">
+        <button type="submit">Changer la photo de profil</button>
+      </form>
+    </div>
+
+    <script src="/js/clique.js"></script>
+    <script src="/js/cookies.js"></script>
+    <script src="/js/scripts.js"></script>
+</body>
+
+</html>
