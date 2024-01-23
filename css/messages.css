@@ -1,0 +1,229 @@
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+a {
+    color: #0f4994;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+ul {
+   list-style-type: none;
+}
+
+body {
+   font-family: 'Roboto', Arial, Helvetica, Sans-serif, Verdana;
+}
+
+.comments-container {
+   width: 500px;
+   max-width: 500px;
+   list-style: none;
+}
+
+.comments-list {
+   margin-top: 30px;
+   max-width: 500px;
+   position: relative;
+}
+
+.comments-list:before {
+   content: '';
+   width: 2px;
+   max-width: 500px;
+   height: 100%;
+   background: #c7cacb;
+   position: absolute;
+   left: 32px;
+   top: 0;
+}
+
+.comments-list:after {
+   content: '';
+   max-width: 500px;
+   position: absolute;
+   background: #c7cacb;
+   bottom: 0;
+   left: 27px;
+   width: 7px;
+   height: 7px;
+   border: 3px solid #dee1e3;
+   -webkit-border-radius: 50%;
+   -moz-border-radius: 50%;
+   border-radius: 50%;
+}
+
+.comments-list li {
+   margin-bottom: 15px;
+   max-width: 500px;
+   display: block;
+   position: relative;
+}
+
+.comments-list li:after {
+   content: '';
+   display: block;
+   max-width: 500px;
+   clear: both;
+   height: 0;
+   width: 0;
+}
+
+.comments-list .comment-box {
+   width: 680px;
+   max-width: 500px;
+   float: right;
+   position: relative;
+   -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.15);
+   -moz-box-shadow: 0 1px 1px rgba(0,0,0,0.15);
+   box-shadow: 0 1px 1px rgba(0,0,0,0.15);
+}
+
+.comments-list .comment-box:before, .comments-list .comment-box:after {
+   content: '';
+   height: 0;
+   width: 0;
+   max-width: 500px;
+   position: absolute;
+   display: block;
+   border-width: 10px 12px 10px 0;
+   border-style: solid;
+   border-color: transparent #FCFCFC;
+   top: 8px;
+   left: -11px;
+}
+
+.reply-list .comment-box {
+   width: 610px;
+   max-width: 500px;
+}
+
+.comment-box .comment-head {
+   background: #FCFCFC;
+   padding: 10px 12px;
+   max-width: 500px;
+   border-bottom: 1px solid #E5E5E5;
+   overflow: hidden;
+   -webkit-border-radius: 4px 4px 0 0;
+   -moz-border-radius: 4px 4px 0 0;
+   border-radius: 4px 4px 0 0;
+}
+
+.comment-box .comment-name {
+   color: #283035;
+   font-size: 14px;
+   max-width: 500px;
+   font-weight: 700;
+   float: left;
+   margin-right: 10px;
+}
+
+.comment-box .comment-head span {
+   float: left;
+   color: #999;
+   max-width: 500px;
+   font-size: 13px;
+   position: relative;
+   top: 1px;
+}
+
+.comment-box .comment-content {
+   background: #FFF;
+   padding: 12px;
+   font-size: 15px;
+   max-width: 500px;
+   max-width: 500px;
+   color: #595959;
+   -webkit-border-radius: 0 0 4px 4px;
+   -moz-border-radius: 0 0 4px 4px;
+   border-radius: 0 0 4px 4px;
+}
+
+.comment-box .comment-name.by-author, .comment-box .comment-name.by-author a {color: #7b19fa;}
+.comment-box .comment-name.by-author:after {
+   content: 'Membre';
+   background: #7b19fa;
+   color: #FFF;
+   font-size: 12px;
+   padding: 3px 5px;
+   font-weight: 700;
+   max-width: 500px;
+   margin-left: 10px;
+   -webkit-border-radius: 3px;
+   -moz-border-radius: 3px;
+   border-radius: 3px;
+}
+
+textarea {
+   resize: none;
+}
+
+.write-new{
+   margin: 20px 0 0;
+   width: 100%;
+   max-width: 100%;
+   list-style: none;
+}
+
+.write-new textarea{
+   color:  #444;
+   font: inherit;
+   outline: 0;
+   border-radius: 3px;
+   border: 1px solid #cecece;
+   background-color:  #fefefe;
+   box-shadow: 1px 2px 1px 0 rgba(0, 0, 0, 0.06);
+   overflow: auto;
+   width:100%;
+   min-height: 80px;
+   padding: 15px 20px;
+}
+
+.write-new button{
+   float:right;
+   background-color:  #dfb4d0;
+   box-shadow: 1px 2px 1px 0 rgba(0, 0, 0, 0.12);
+   border-radius: 2px;
+   border: 0;
+   color: #ffffff;
+   font-weight: bold;
+   cursor: pointer;
+   padding: 10px 25px;
+   margin-top: 18px;
+   transition: background-color 0.3s ease;
+}
+
+.write-new button:hover{
+   background-color: #da77b9;
+}
+
+.dark-theme .write-new button {
+   background-color:  #a464c6;
+}
+
+.dark-theme .write-new button:hover{
+   background-color: #9b31d4;
+}
+
+/** =====================
+* Responsive
+========================*/
+@media only screen and (max-width: 766px) {
+   .comments-container {
+       width: 480px;
+   }
+   .comments-list .comment-box {
+       width: 390px;
+   }
+   .reply-list .comment-box {
+       width: 320px;
+   }
+   .write-new{
+      width: 100%;
+  }
+}

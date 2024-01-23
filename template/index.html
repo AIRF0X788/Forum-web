@@ -117,7 +117,7 @@
                         <a class="category">✔️ {{.Category}}</a>
                         <p>Créer le {{.CreatedAt.Format "02/01/2006 à 15:04"}}</p>
                         <a href="/topic/{{ .ID }}" style="text-decoration: none;">Découvrir ...</a>
-                        <form action="/delete_topic" method="POST" style="display: inline;" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer ce message ?');">
+                        <form action="/delete_topic" method="POST" style="display: inline;" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer ce topic ?');">
                             <input type="hidden" name="topic_id" value="{{.ID}}">
                             <button type="submit" class="delete-button">Supprimer</button>
                         </form>
